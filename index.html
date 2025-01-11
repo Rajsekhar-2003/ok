@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Transfer</title>
+</head>
+<body>
+    <h1>File Transfer App</h1>
+    
+    <!-- Upload Form -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Files</h2>
+    <ul>
+        {% for file in files %}
+        <li>
+            <a href="/download/{{ file }}">{{ file }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
